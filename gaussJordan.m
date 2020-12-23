@@ -28,9 +28,6 @@ for k = 1: n-1
         end
     end
 end
-disp('Traingular Augmented Matrix is :');
-disp(A);
-
 
 %Getting Answers
 X(n) = A(n,n+1) / A(n,n);
@@ -42,7 +39,7 @@ for j = n-1 : -1 : 1
     X(j) = (A(j,n+1) - sum) / A(j,j);
     X(j) = round(X(j), percision,'significant');
 end
-
+X=transpose(X);
 %check if its NaN or infinity
 if isnan(X(1,1)) == 1
     x = 1;

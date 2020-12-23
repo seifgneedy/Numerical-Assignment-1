@@ -22,7 +22,7 @@ function varargout = GUI(varargin)
 
 % Edit the above text to modify the response to help untitled
 
-% Last Modified by GUIDE v2.5 20-Dec-2020 20:41:09
+% Last Modified by GUIDE v2.5 23-Dec-2020 06:39:36
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -71,77 +71,6 @@ function varargout = GUI_OutputFcn(hObject, eventdata, handles)
 % Get default command line output from handles structure
 varargout{1} = handles.output;
 
-
-% --- Executes on selection change in popupmenu2.
-function popupmenu2_Callback(hObject, eventdata, handles)
-% hObject    handle to popupmenu2 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: contents = cellstr(get(hObject,'String')) returns popupmenu2 contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from popupmenu2
-
-
-% --- Executes during object creation, after setting all properties.
-function popupmenu2_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to popupmenu2 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: popupmenu controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
-
-
-% --- Executes on selection change in listbox1.
-function listbox1_Callback(hObject, eventdata, handles)
-% hObject    handle to listbox1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: contents = cellstr(get(hObject,'String')) returns listbox1 contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from listbox1
-
-
-% --- Executes during object creation, after setting all properties.
-function listbox1_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to listbox1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: listbox controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
-
-
-
-
-function edit2_Callback(hObject, eventdata, handles)
-% hObject    handle to edit2 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of edit2 as text
-%        str2double(get(hObject,'String')) returns contents of edit2 as a double
-
-
-% --- Executes during object creation, after setting all properties.
-function edit2_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit2 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
-
-
 % --- Executes on button press in N_Equations_button.
 function N_Equations_button_Callback(hObject, eventdata, handles)
 % hObject    handle to N_Equations_button (see GCBO)
@@ -160,63 +89,6 @@ end
 
 
 
-
-
-
-function N_Equations_Input_Callback(hObject, eventdata, handles)
-% hObject    handle to txtArea (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-%    set(handles.Equations_Input,'Max',str2double(handles.txtArea.value))
-
-% Hints: get(hObject,'String') returns contents of txtArea as text
-%        str2double(get(hObject,'String')) returns contents of txtArea as a double
-
-
-% --- Executes during object creation, after setting all properties.
-function N_Equations_Input_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to txtArea (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
-
-
-
-% --- Executes on selection change in popupmenu4.
-function popupmenu4_Callback(hObject, eventdata, handles)
-% hObject    handle to popupmenu4 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: contents = cellstr(get(hObject,'String')) returns popupmenu4 contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from popupmenu4
-
-
-% --- Executes during object creation, after setting all properties.
-function popupmenu4_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to popupmenu4 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: popupmenu controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
-
-
-
-
-% --- Executes when uipanel1 is resized.
-function uipanel1_SizeChangedFcn(hObject, eventdata, handles)
-% hObject    handle to uipanel1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
 
 % --- Executes on selection change in Methods_Menu.
@@ -251,139 +123,6 @@ elseif strcmp(selectedItem,'Gauss Seidil') || strcmp(selectedItem,'Jacobi Iterat
 end
 
 
-
-% --- Executes during object creation, after setting all properties.
-function Methods_Menu_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to Methods_Menu (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: popupmenu controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
-
-
-
-function Equations_Input_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to Methods_Menu (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: popupmenu controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
-
-
-
-
-function Equations_Input_Callback(hObject, eventdata, handles)
-% hObject    handle to Equations_Input (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of Equations_Input as text
-%        str2double(get(hObject,'String')) returns contents of Equations_Input as a double
-
-
-% --- Executes during object creation, after setting all properties.
-
-
-% --- Executes on selection change in LU_Menu.
-function LU_Menu_Callback(hObject, eventdata, handles)
-% hObject    handle to LU_Menu (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: contents = cellstr(get(hObject,'String')) returns LU_Menu contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from LU_Menu
-
-
-% --- Executes during object creation, after setting all properties.
-function LU_Menu_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to LU_Menu (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: popupmenu controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
-
-
-
-function Guess_Input_Callback(hObject, eventdata, handles)
-% hObject    handle to Guess_Input (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of Guess_Input as text
-%        str2double(get(hObject,'String')) returns contents of Guess_Input as a double
-
-
-% --- Executes during object creation, after setting all properties.
-function Guess_Input_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to Guess_Input (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
-
-
-% --- Executes on selection change in Stopping_Condition_Menu.
-function Stopping_Condition_Menu_Callback(hObject, eventdata, handles)
-% hObject    handle to Stopping_Condition_Menu (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: contents = cellstr(get(hObject,'String')) returns Stopping_Condition_Menu contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from Stopping_Condition_Menu
-
-
-% --- Executes during object creation, after setting all properties.
-function Stopping_Condition_Menu_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to Stopping_Condition_Menu (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: popupmenu controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
-
-
-
-function Stopping_Condition_Input_Callback(hObject, eventdata, handles)
-% hObject    handle to Stopping_Condition_Input (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of Stopping_Condition_Input as text
-%        str2double(get(hObject,'String')) returns contents of Stopping_Condition_Input as a double
-
-
-% --- Executes during object creation, after setting all properties.
-function Stopping_Condition_Input_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to Stopping_Condition_Input (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
-
-
 % --- Executes on button press in Solve_Button.
 function Solve_Button_Callback(hObject, eventdata, handles)
 % hObject    handle to Solve_Button (see GCBO)
@@ -395,16 +134,119 @@ try
     set(handles.warning2,'String','');
     [A,B,symbols]=convert(eqns);
     numberOfEquations=size(eqns,1);
+    indexP=get(handles.Precision_Menu,'Value');
+    itemsP=get(handles.Precision_Menu,'String');
+    Precision=itemsP{indexP};
+    if strcmp(Precision,'default')
+        Precision=16;
+    else
+        Precision=str2double(Precision);
+    end
     if numberOfEquations~=str2double(get(handles.N_Equations_Input,'String'))
         errorMessage= [errorMessage,' -Invalid Number of equations'];
         error();
     end
-    %to be continued
-    disp(A)
-    disp(length(A))
-    disp(B)
-    disp(symbols)
+    if numberOfEquations~=length(symbols)
+        errorMessage=[errorMessage,''];
+        error();
+    end
+    index=get(handles.Methods_Menu,'Value');
+    items=get(handles.Methods_Menu,'String');
+    method=items{index};
+    answer=0;
+    if strcmp(method,'Gauss Elimination')
+        answer= gaussElimination(A,B,Precision);
+    elseif strcmp(method,'Gauss Elimination using pivoting')
+        answer=gaussEliminationWithPivoting(A,B,Precision);
+    elseif strcmp(method,'Gauss Jordan')
+        answer=gaussJordan(A,B,Precision);
+    end
+    if answer == 1 
+            set(handles.warning2,'String','System has infinity number of solutions');
+            return;
+        elseif answer==2
+            set(hanles.warning2,'String','System has no solution');
+        return;
+    end
+    if strcmp(method,'LU Decomposition')
+        indexLU=get(handles.LU_Menu,'Value');
+        itemsLU=get(handles.LU_Menu,'String');
+        format=itemsLU{indexLU};
+        if strcmp(format,'Doolittle Form')
+            answer=doolittleLU(A,B,Precision);
+            if answer==-1
+                set(handles.warning2,'String','Can not form LU Decomposition');
+                return;
+            end
+        elseif strcmp(format,'Crout Form')
+            answer=croutLU(A,B,Precision);
+        elseif strcmp(format,'Cholesky Form')
+            answer=cheloskyD(A,B,Precision);
+        end
+    end
+    if answer==-1
+        set(handles.warning2,'String','Can not form LU Decomposition');
+        return;
+    end
+    if strcmp(method,'Gauss Seidil') ||strcmp(method,'Jacobi Iteration')
+        indexSC=get(handles.Stopping_Condition_Menu,'Value');
+        itemsSC=get(handles.Stopping_Condition_Menu,'String');
+        SC=itemsSC{indexSC};
+        disp(SC)
+        %get guess input
+        in=get(handles.Guess_Input,'String');
+        disp(length(in))
+        if numberOfEquations ~= length(in)
+            disp('shar')
+            set(handles.warning2,'String','Invalid initial guess');
+            return;
+        end
+        %in=splitlines(in);
+        for i=1:length(in)
+            x(i)=str2double(in(i,:));
+        end
+        x=transpose(x)
+        %get num input
+        num=get(handles.Stopping_Condition_Input,'String');
+        if strcmp(num,'')
+            warn=['Enter ',SC];
+            set(handles.warning2,'String',warn);
+            return;
+        else
+            num=str2double(num);
+        end
+        if strcmp(method,'Gauss Seidil')
+            if strcmp(SC,'Number of iterations')
+                [answer,converge]=Gauss_Seidel_iteration(A,B,x,num,Precision);
+            else
+                [answer,converge]=Gauss_Seidel_relativeError(A,B,x,num,Precision);
+            end
+        else
+            if strcmp(SC,'Number of iterations')
+                [answer,converge]=Jacobi_iterations(A,B,x,num,Precision);
+            else
+                [answer,converge]=Jacobi_relativeError(A,B,x,num,Precision);
+            end
+        end
+        if converge
+            set(handles.warning2,'String','It converges to the solution');
+        else
+            set(handles.warning2,'String','It does not converge to the solution');
+        end
+    end
+    for i =1:size(answer,1)
+        out(i,:) = [symbols(i),answer(i)];
+    end
+    set(handles.Result_Table,'Data',out);
 catch e
     set(handles.warning2,'String',errorMessage);
 end
-    
+%It ain't much but honest work
+
+
+% --- Executes during object creation, after setting all properties.
+function Result_Table_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to Result_Table (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+set(hObject,'ColumnWidth',{50,200});
