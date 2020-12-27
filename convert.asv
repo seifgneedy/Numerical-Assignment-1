@@ -12,9 +12,10 @@ symbols=symvar(str);
 S = warning('off');
 variables =sym(symbols);
 lines =strsplit(str,',');
-
+disp(lines)
 for itr=1:n
    [A(itr,:), B(itr)]=equationsToMatrix(sym(lines(itr)),variables);
 end
 warning(S);
+   
 end

@@ -127,8 +127,12 @@ function Solve_Button_Callback(hObject, eventdata, handles)
 % hObject    handle to Solve_Button (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)[A,B,flag] = MatrixParser(get(handles.Equations_Input,'String'));
+
 eqns=get(handles.Equations_Input,'String');
 errorMessage='Invalid Input';
+%out=get(handles.Result_Table,'Data');
+
+%set(handles.Result_Table,'Data',out);
 try
     set(handles.warning2,'String','');
     [A,B,symbols]=convert(eqns);
@@ -176,10 +180,17 @@ try
         elseif strcmp(format,'Crout Form')
             answer=croutLU(A,B,Precision);
         elseif strcmp(format,'Cholesky Form')
+            
+            if isSymmetric( A ) == 0
+                set(handles.warning2,'String','Can not form Chelosky Decomposition As it is not Symmetric');
+            end
+            disp(format)
             if isPositiveDifiniteMatrix(A) == 0
                 set(handles.warning2,'String','Can not form Chelosky Decomposition As it is not positive definite');
             end
-            answer=cheloskyD(A,B,Precision);
+            disp('Im here')
+            answer=choleskyD(A,B,Precision);
+            disp(answer)
         end
     end
     if answer==-1
@@ -190,12 +201,9 @@ try
         indexSC=get(handles.Stopping_Condition_Menu,'Value');
         itemsSC=get(handles.Stopping_Condition_Menu,'String');
         SC=itemsSC{indexSC};
-        disp(SC)
         %get guess input
         in=get(handles.Guess_Input,'String');
-        disp(length(in))
         if numberOfEquations ~= length(in)
-            disp('shar')
             set(handles.warning2,'String','Invalid initial guess');
             return;
         end

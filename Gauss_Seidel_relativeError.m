@@ -17,7 +17,7 @@ b = b(order, :);
 format shortg
 n=length(x);
 
-for k = 1 : iterations
+while (1 == 1)
     x_old=x;
     for i = 1 : n
         sigma=0;

@@ -14,7 +14,7 @@ function x = doolittleLU(a, b, precision)
         x = substitute(a, o, n, b, x, precision);
     end
 end
-function [a, o, er] = decompose(a, n, o, s, er)
+function [a, o, er] = decompose(a, n, o, s, er,precision)
     %finding scales
     for h = 1 : n
         s(h) = abs(a(h, 1));
