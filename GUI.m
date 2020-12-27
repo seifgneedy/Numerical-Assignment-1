@@ -58,8 +58,7 @@ handles.output = hObject;
 guidata(hObject, handles);
 
 % UIWAIT makes untitled wait for user response (see UIRESUME)
-% uiwait(handles.figure1);
-
+% uiwait(handles.figure1)
 
 % --- Outputs from this function are returned to the command line.
 function varargout = GUI_OutputFcn(hObject, eventdata, handles) 
@@ -204,7 +203,7 @@ try
         for i=1:length(in)
             x(i)=str2double(in(i,:));
         end
-        x=transpose(x)
+        x=transpose(x);
         %get num input
         num=get(handles.Stopping_Condition_Input,'String');
         if strcmp(num,'')

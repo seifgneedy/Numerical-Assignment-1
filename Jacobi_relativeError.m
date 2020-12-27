@@ -1,5 +1,9 @@
 function [y, converge] = Jacobi_relativeError(A, b, x, error, precision)
 
+A = percise(A, precision);
+b = percise(b, precision);
+x = percise(x, precision);
+
 error = abs(error);
 
 prevnormVal=Inf; 
@@ -23,7 +27,8 @@ while (1 == 1)
                 sigma = round(sigma, precision, 'significant');
             end
         end
-        x(i)=(1/A(i,i))*(b(i)-sigma);
+        z = round(1/A(i,i), precision, 'significant');
+        x(i) = z * (b(i)-sigma);
         x(i) = round(x(i), precision, 'significant');
     end
     

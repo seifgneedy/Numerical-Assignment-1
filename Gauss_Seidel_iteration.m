@@ -1,5 +1,9 @@
 function [y, converge] = Gauss_Seidel_iteration(A, b, x, iterations, precision)
 
+A = percise(A, precision);
+b = percise(b, precision);
+x = percise(x, precision);
+
 prevnormVal=Inf; 
 converge = true;
 numberdiverge = 0;
@@ -21,7 +25,8 @@ for k = 1 : iterations
                 sigma = round(sigma, precision, 'significant');
             end
         end
-        x(i)=(1/A(i,i))*(b(i)-sigma);
+        z = round(1/A(i,i), precision, 'significant');
+        x(i) = z * (b(i)-sigma);
         x(i) = round(x(i), precision, 'significant');
     end
     

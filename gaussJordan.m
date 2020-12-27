@@ -1,5 +1,9 @@
 function x = gaussJordan(A0,B,percision)
 format shortg
+
+A0 = percise(A0, percision);
+B = percise(B, percision);
+
 %A is the Augmented Matrix
 A = [A0 B];
 n=length(A0);
@@ -23,23 +27,30 @@ for k = 1: n-1
     
     for i = k+1: n
         m = A(i,k) / A(k,k);
+        m = round(m, percision,'significant');
         for j = k : n+1
             A(i,j) = A(i,j) - m*A(k,j);
+            A(i, j) = round(A(i,j), percision,'significant');
         end
     end
 end
+disp('Traingular Augmented Matrix is :');
+disp(A);
+
 
 %Getting Answers
 X(n) = A(n,n+1) / A(n,n);
+X(n) = round(X(n), percision,'significant');
 for j = n-1 : -1 : 1
     sum = 0;
     for i=1 : n-j
         sum = sum + A(j,n+1-i) * X(n+1-i);
+        sum = round(sum, percision,'significant');
     end
     X(j) = (A(j,n+1) - sum) / A(j,j);
     X(j) = round(X(j), percision,'significant');
 end
-X=transpose(X);
+
 %check if its NaN or infinity
 if isnan(X(1,1)) == 1
     x = 1;

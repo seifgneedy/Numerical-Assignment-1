@@ -1,5 +1,12 @@
 function [y, converge] = Jacobi_iterations(A, b, x, iterations, precision)
 
+A = percise(A, precision);
+b = percise(b, precision);
+x = percise(x, precision);
+
+format shortg
+n=length(x);
+
 prevnormVal=Inf; 
 converge = true;
 numberdiverge = 0;
@@ -7,9 +14,6 @@ numberdiverge = 0;
 order = DiagDom(A);
 A = A(order, :);
 b = b(order, :);
-
-format shortg
-n=length(x);
 
 for k = 1 : iterations
     x_old=x;
@@ -21,7 +25,8 @@ for k = 1 : iterations
                 sigma = round(sigma, precision, 'significant');
             end
         end
-        x(i)=(1/A(i,i))*(b(i)-sigma);
+        z = round(1/A(i,i), precision, 'significant');
+        x(i) = z * (b(i)-sigma);
         x(i) = round(x(i), precision, 'significant');
     end
     
