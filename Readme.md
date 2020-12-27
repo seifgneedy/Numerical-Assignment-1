@@ -1,3 +1,4 @@
 # Numerical Assignment
 
-## bla bla bla bla bla bla ......
+## GUI application to solve Systems of linear equations using different methods
+
