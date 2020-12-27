@@ -174,13 +174,12 @@ try
         format=itemsLU{indexLU};
         if strcmp(format,'Doolittle Form')
             answer=doolittleLU(A,B,Precision);
-            if answer==-1
-                set(handles.warning2,'String','Can not form LU Decomposition');
-                return;
-            end
         elseif strcmp(format,'Crout Form')
             answer=croutLU(A,B,Precision);
         elseif strcmp(format,'Cholesky Form')
+            if isPositiveDifiniteMatrix(A) == 0
+                set(handles.warning2,'String','Can not form Chelosky Decomposition As it is not positive definite');
+            end
             answer=cheloskyD(A,B,Precision);
         end
     end
